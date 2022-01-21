@@ -9,28 +9,35 @@ const Nav = () => {
   const path = useLocation().pathname;
 
   return (
-    <nav
-      className="Nav"
-      onClick={() => {
-        console.log(path);
-      }}
-    >
+    <nav className="Nav">
       <img className="Nav__menu" src={menu} alt="menu" />
       <Link to="/">
         <img className="Nav__logo" src={logo} alt="logo" />
       </Link>
       <div className="Nav__links">
-        <Link to="collections">Collections</Link>
+        <Link className="Nav__link current" to="collections">
+          Collections
+        </Link>
 
-        <Link to="men">Men</Link>
+        <Link className="Nav__link" to="men">
+          Men
+        </Link>
 
-        <Link to="women">Women</Link>
+        <Link className="Nav__link" to="women">
+          Women
+        </Link>
 
-        <Link to="about">About</Link>
+        <Link className="Nav__link" to="about">
+          About
+        </Link>
 
-        <Link to="Contact">Collections</Link>
+        <Link className="Nav__link" to="Contact">
+          Collections
+        </Link>
       </div>
-      <img className="Nav__cart" src={cart} alt="cart" />
+      <Link to="/cart" className="Nav__cart">
+        <img src={cart} alt="cart" />
+      </Link>
       <img className="Nav__avatar" src={avatar} alt="avatar" />
     </nav>
   );
