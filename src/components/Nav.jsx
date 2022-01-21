@@ -7,6 +7,7 @@ import avatar from "../images/image-avatar.png";
 import logo from "../images/logo.svg";
 import { Link, useLocation } from "react-router-dom";
 import capitalize from "lodash.capitalize";
+import Cart from "./Cart";
 
 const navLinks = ["collections", "men", "women", "about", "contact"];
 
@@ -59,6 +60,7 @@ const Nav = () => {
         {numOfItems ? <span className="num-of-items">{numOfItems}</span> : null}
       </Link>
       <img className="Nav__avatar" src={avatar} alt="avatar" />
+      <Cart />
     </nav>
   );
 };
