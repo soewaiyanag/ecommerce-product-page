@@ -5,6 +5,9 @@
   gap: 1.5rem;
   align-items: center;
   background-color: white;
+  border-bottom: 1px solid var(--grayish-blue);
+  max-width: $xl;
+  @include mx(auto);
   @include px(2rem);
 
   img {
@@ -39,8 +42,9 @@
     position: absolute;
     bottom: 0;
     width: 0;
-    left: 0;
+    left: 50%;
     right: 0;
+    transform: translateX(-50%);
     height: 3px;
     background-color: var(--primary);
     transition: width 200ms $t-func;
