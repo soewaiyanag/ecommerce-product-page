@@ -1,0 +1,40 @@
+@import "../mixin.scss";
+.Nav {
+  height: 5rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  background-color: white;
+  @include px(2rem);
+
+  img {
+    cursor: pointer;
+  }
+  &__menu {
+    @include media-breakpoint-up($md) {
+      display: none;
+    }
+  }
+  &__cart {
+    margin-left: auto;
+  }
+  &__avatar {
+    width: 1.6rem;
+  }
+
+  &__links {
+    display: flex;
+    gap: 1rem;
+    @include mx(1rem);
+    a {
+      font-weight: 500;
+      color: var(--dark-grayish-blue);
+      &:hover {
+        color: var(--dark-blue);
+      }
+    }
+    @include media-breakpoint-down($md) {
+      display: none;
+    }
+  }
+}
