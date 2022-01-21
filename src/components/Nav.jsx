@@ -1,6 +1,7 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import "./Nav.scss";
 import menu from "../images/icon-menu.svg";
+import close from "../images/icon-close.svg";
 import cart from "../images/icon-cart.svg";
 import avatar from "../images/image-avatar.png";
 import logo from "../images/logo.svg";
@@ -12,6 +13,7 @@ const navLinks = ["collections", "men", "women", "about", "contact"];
 const Nav = () => {
   const path = useLocation().pathname;
   const navLinksRef = useRef(null);
+  const [isNavActive, setIsNavActive] = useState(false);
 
   useEffect(() => {
     navLinks.forEach((navLink, index) => {
@@ -23,13 +25,28 @@ const Nav = () => {
     });
   });
 
+  const toggleNav = () => {
+    setIsNavActive(!isNavActive);
+  };
+
   return (
     <nav className="Nav">
-      <img className="Nav__menu" src={menu} alt="menu" />
+      <img
+        onClick={toggleNav}
+        className="Nav__menu"
+        src={isNavActive ? close : menu}
+        alt="menu"
+      />
       <Link to="/">
         <img className="Nav__logo" src={logo} alt="logo" />
       </Link>
-      <div className="Nav__links" ref={navLinksRef}>
+      <div
+        style={{
+          transform: isNavActive ? "translateX(0)" : null,
+        }}
+        className="Nav__links"
+        ref={navLinksRef}
+      >
         {navLinks.map((navLink) => (
           <Link className="Nav__link" to={"/" + navLink} key={navLink}>
             {capitalize(navLink)}
