@@ -15,6 +15,7 @@ const Nav = () => {
   const path = useLocation().pathname;
   const navLinksRef = useRef(null);
   const [isNavActive, setIsNavActive] = useState(false);
+  const [showCart, setShowCart] = useState(false);
   const [numOfItems, setNumOfItems] = useState(0);
 
   useEffect(() => {
@@ -55,12 +56,18 @@ const Nav = () => {
           </Link>
         ))}
       </div>
-      <Link to="/cart" className="Nav__cart">
+      <Link
+        to="/cart"
+        className="Nav__cart"
+        onClick={() => {
+          setShowCart(!showCart);
+        }}
+      >
         <img src={cart} alt="cart" />
         {numOfItems ? <span className="num-of-items">{numOfItems}</span> : null}
       </Link>
       <img className="Nav__avatar" src={avatar} alt="avatar" />
-      <Cart />
+      {showCart ? <Cart /> : null}
     </nav>
   );
 };
