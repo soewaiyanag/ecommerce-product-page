@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./LightBox.scss";
 
 import product1 from "../images/image-product-1.jpg";
@@ -10,10 +10,8 @@ import product3_tumb from "../images/image-product-3-thumbnail.jpg";
 import previous from "../images/icon-previous.svg";
 import next from "../images/icon-next.svg";
 
-const products = [product1, product2, product3];
-const products_tumb = [product1_tumb, product2_tumb, product3_tumb];
-
 const LightBox = () => {
+  const sliderImagesRef = useRef();
   const [index, setIndex] = useState(0);
 
   // FUNCTIONS
@@ -30,11 +28,28 @@ const LightBox = () => {
         <span className="LightBox__preview--icon previous" onClick={goPrevious}>
           <img src={previous} alt="previous" />
         </span>
-        <img
-          className="LightBox__preview--img"
-          src={products[index]}
-          alt="preview"
-        />
+        <div
+          style={{
+            transform: `translateX(${-100 * index}%)`,
+          }}
+          className="LightBox__preview--imgs"
+        >
+          <img
+            className="LightBox__preview--img"
+            src={product1}
+            alt="preview"
+          />
+          <img
+            className="LightBox__preview--img"
+            src={product2}
+            alt="preview"
+          />
+          <img
+            className="LightBox__preview--img"
+            src={product3}
+            alt="preview"
+          />
+        </div>
         <span className="LightBox__preview--icon next" onClick={goNext}>
           <img src={next} alt="next" />
         </span>

@@ -1,12 +1,18 @@
 .LightBox {
   &__preview {
     position: relative;
+    overflow-x: hidden;
+    &--imgs {
+      display: flex;
+      transition: transform 200ms;
+    }
     &--img {
       width: 100%;
       object-fit: cover;
     }
     &--icon {
       position: absolute;
+      z-index: 1;
       background-color: #fff;
       width: 2rem;
       aspect-ratio: 1/1;
