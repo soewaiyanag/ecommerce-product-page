@@ -56,8 +56,7 @@ const Nav = () => {
           </Link>
         ))}
       </div>
-      <Link
-        to="/cart"
+      <div
         className="Nav__cart"
         onClick={() => {
           setShowCart(!showCart);
@@ -65,7 +64,7 @@ const Nav = () => {
       >
         <img src={cart} alt="cart" />
         {numOfItems ? <span className="num-of-items">{numOfItems}</span> : null}
-      </Link>
+      </div>
       <img className="Nav__avatar" src={avatar} alt="avatar" />
       {showCart ? <Cart /> : null}
     </nav>

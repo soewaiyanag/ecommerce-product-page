@@ -8,6 +8,7 @@ $h-nav: 5rem;
   background-color: white;
   border-bottom: 1px solid var(--grayish-blue);
   max-width: $xl;
+  z-index: 10;
   @include mx(auto);
   @include px(2rem);
 
@@ -15,7 +16,7 @@ $h-nav: 5rem;
     cursor: pointer;
   }
   &__menu {
-    z-index: 10;
+    z-index: 20;
     @include media-breakpoint-up($md) {
       display: none;
     }
@@ -24,6 +25,7 @@ $h-nav: 5rem;
   &__cart {
     margin-left: auto;
     position: relative;
+    z-index: 10;
     display: flex;
     img {
       width: 1.5rem;
@@ -72,7 +74,7 @@ $h-nav: 5rem;
     left: 50%;
     right: 0;
     transform: translateX(-50%);
-    height: 3px;
+    height: 4px;
     background-color: var(--primary);
     transition: width 200ms $t-func;
   }
@@ -93,6 +95,7 @@ $h-nav: 5rem;
     }
     &__links {
       position: fixed;
+      z-index: 10;
       flex-direction: column;
       top: 0;
       bottom: 0;

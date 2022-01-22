@@ -2,11 +2,13 @@
 
 .Cart {
   position: absolute;
+  z-index: 5;
   background-color: #fff;
   top: 5.5rem;
   left: 0;
   right: 0;
   border-radius: 0.8rem;
+  @include mx(0.5rem);
   & > * {
     @include px(1.5rem);
     @include py(1rem);

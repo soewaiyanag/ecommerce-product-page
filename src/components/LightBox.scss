@@ -1,0 +1,41 @@
+.LightBox {
+  &__preview {
+    position: relative;
+    &--img {
+      width: 100%;
+      object-fit: cover;
+    }
+    &--icon {
+      position: absolute;
+      background-color: #fff;
+      width: 2rem;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      cursor: pointer;
+      top: 50%;
+      transform: translateY(-50%);
+      user-select: none;
+      opacity: 1;
+      transition: opacity 140ms;
+      img {
+        width: 0.5rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &.previous {
+        left: 2.5%;
+      }
+      &.next {
+        right: 2.5%;
+      }
+      &:hover {
+        opacity: 0.85;
+      }
+      &:active {
+        opacity: 1;
+      }
+    }
+  }
+}
