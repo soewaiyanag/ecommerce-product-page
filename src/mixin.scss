@@ -35,3 +35,15 @@ $t-func: cubic-bezier(0.4, 0, 0.2, 1);
     @content;
   }
 }
+
+@mixin space-y($value) {
+  & > * + * {
+    margin-top: $value;
+  }
+}
+
+@mixin space-x($value) {
+  & > * + * {
+    margin-left: $value;
+  }
+}
