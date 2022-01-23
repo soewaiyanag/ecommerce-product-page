@@ -1,5 +1,11 @@
+@import "./mixin.scss";
 .App {
   overflow-x: hidden;
   height: 100vh;
-  // background-color: black;
+  &--container {
+    @include media-breakpoint-up($md) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 }
