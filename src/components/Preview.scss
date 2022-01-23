@@ -1,0 +1,16 @@
+@import "../mixin.scss";
+.Preview {
+  @include space-y(2rem);
+  &--img {
+    width: 100%;
+    border-radius: 0.8rem;
+  }
+  &__selector {
+    display: flex;
+    justify-content: space-between;
+    &--img {
+      width: 20%;
+      border-radius: 0.8rem;
+    }
+  }
+}

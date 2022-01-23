@@ -18,6 +18,7 @@
   }
   &__description {
     color: var(--dark-grayish-blue);
+    font-size: 1rem;
     font-weight: 500;
   }
   &__price {
@@ -56,14 +57,15 @@
   }
   &__amount {
     background-color: var(--light-grayish-blue);
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
 
     img {
       cursor: pointer;
     }
     &--input {
+      width: 100%;
       font-weight: 700;
       font-size: 1.025rem;
       border: none;
@@ -71,8 +73,13 @@
       text-align: center;
       background-color: transparent;
     }
+    &--plus,
+    &--minus {
+      @include mx(auto);
+    }
     @include media-breakpoint-up($md) {
       flex: 1;
+      @include px(1rem);
     }
   }
   &--foot {
@@ -91,8 +98,10 @@
       width: 100%;
       height: 3rem;
       border-radius: 0.5em;
+      min-width: 0;
     }
     button {
+      flex: 1.5;
       cursor: pointer;
       border: none;
       outline: none;
@@ -112,7 +121,7 @@
         width: 1.2rem;
       }
       @include media-breakpoint-up($md) {
-        flex: 2;
+        min-width: 200px;
       }
     }
   }
