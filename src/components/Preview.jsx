@@ -12,12 +12,25 @@ const Preview = ({ productImgs }) => {
       />
       <div className="Preview__selector">
         {productImgs.map((img, i) => (
-          <img
-            className="Preview__selector--img"
-            src={img}
-            alt="img"
+          <div
+            style={{
+              outlineWidth: index === i ? "initial" : null,
+            }}
+            className="Preview__selector--div"
             key={"preview" + i}
-          />
+            onClick={() => {
+              setIndex(i);
+            }}
+          >
+            <img
+              style={{
+                opacity: index === i ? ".5" : null,
+              }}
+              className="Preview__selector--img"
+              src={img}
+              alt="img"
+            />
+          </div>
         ))}
       </div>
     </div>
