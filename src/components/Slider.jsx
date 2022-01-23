@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import "./LightBox.scss";
+import "./Slider.scss";
 
 import product1 from "../images/image-product-1.jpg";
 import product2 from "../images/image-product-2.jpg";

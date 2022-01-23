@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Main.scss";
+import "./Info.scss";
 import cart from "../images/icon-cart.svg";
 import plus from "../images/icon-plus.svg";
 import minus from "../images/icon-minus.svg";
