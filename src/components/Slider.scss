@@ -1,8 +1,8 @@
 @import "../mixin.scss";
 
 .Slider {
+  position: relative;
   &__preview {
-    position: relative;
     overflow-x: hidden;
     &--wrapper {
       @include media-breakpoint-up($md) {
@@ -59,10 +59,7 @@
       }
     }
   }
-}
-
-.LightBox {
-  .Slider__preview--icon {
-    display: inline-block;
+  .close {
+    display: none;
   }
 }

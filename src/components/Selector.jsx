@@ -29,7 +29,7 @@ const Selector = ({ index, setIndex }) => {
         >
           <img
             style={{
-              opacity: index === i ? ".5" : null,
+              opacity: index === i ? "0.5" : null,
             }}
             className="Selector--img"
             src={img}
