@@ -1,0 +1,19 @@
+.Slider__preview--icon {
+  .Icon--path {
+    transition: stroke 200ms;
+    stroke: #1d2026;
+  }
+  &:hover {
+    .Icon--path {
+      stroke: var(--primary);
+    }
+  }
+}
+
+.Icon.Close {
+  fill: #69707d;
+  transition: fill 200ms;
+  &:hover {
+    fill: var(--primary);
+  }
+}

@@ -2,14 +2,13 @@ import React, { useState, useEffect } from "react";
 import Selector from "./Selector";
 import "./Slider.scss";
 
-import previous from "../images/icon-previous.svg";
-import next from "../images/icon-next.svg";
-import close from "../images/icon-close.svg";
-
 import product1 from "../images/image-product-1.jpg";
 import product2 from "../images/image-product-2.jpg";
 import product3 from "../images/image-product-3.jpg";
 import product4 from "../images/image-product-4.jpg";
+import NextIcon from "./NextIcon";
+import PreviousIcon from "./PreviousIcon";
+import CloseIcon from "./CloseIcon";
 
 const productImgs = [product1, product2, product3, product4];
 
@@ -27,13 +26,16 @@ const Slider = ({ viewWidth, activeLightBox, closeLightBox }) => {
   return (
     <div className="Slider">
       <span className="Slider__preview--icon previous" onClick={goPrevious}>
-        <img src={previous} alt="previous" />
-      </span>
-      <span className="Slider__preview--icon next" onClick={goNext}>
-        <img src={next} alt="next" />
+        <PreviousIcon />
       </span>
 
-      <img className="close" src={close} alt="close" onClick={closeLightBox} />
+      <span className="Slider__preview--icon next" onClick={goNext}>
+        <NextIcon />
+      </span>
+
+      <span className="close" onClick={closeLightBox}>
+        <CloseIcon />
+      </span>
 
       <div className="Slider__preview--wrapper">
         <div className="Slider__preview">
@@ -43,7 +45,7 @@ const Slider = ({ viewWidth, activeLightBox, closeLightBox }) => {
             }}
             className="Slider__preview--imgs"
             onClick={() => {
-              // optional event // don't run when function is undefined
+              // optional event // doesn't run when function is undefined
               activeLightBox && activeLightBox();
             }}
           >
