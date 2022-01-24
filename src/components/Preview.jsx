@@ -17,7 +17,7 @@ const Preview = ({ productImgs }) => {
               outlineWidth: index === i ? "initial" : null,
             }}
             className="Preview__selector--div"
-            key={"preview" + i}
+            key={"selector" + i}
             onClick={() => {
               setIndex(i);
             }}

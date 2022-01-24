@@ -20,7 +20,7 @@ const Main = () => {
         <span className="Main__price--actual">$250.00</span>
       </div>
       <div className="Main--foot">
-        <div className="Main__amount">
+        <div className="Main--foot__amount">
           <img
             onClick={() => {
               let value = Number(amount);
@@ -29,10 +29,10 @@ const Main = () => {
             }}
             src={minus}
             alt="minus"
-            className="Main__amount--minus"
+            className="Main--foot__amount--minus"
           />
           <input
-            className="Main__amount--input"
+            className="Main--foot__amount--input"
             placeholder={0}
             min={0}
             max={999}
@@ -53,7 +53,7 @@ const Main = () => {
             }}
             src={plus}
             alt="plus"
-            className="Main__amount--plus"
+            className="Main--foot__amount--plus"
           />
         </div>
         <button>

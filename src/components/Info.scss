@@ -15,16 +15,25 @@
   }
   &__name {
     font-size: 1.8rem;
+    @include media-breakpoint-up($md) {
+      font-size: 2.2rem;
+      width: 20ch;
+    }
   }
   &__description {
     color: var(--dark-grayish-blue);
     font-size: 1rem;
     font-weight: 500;
+    @include media-breakpoint-up($md) {
+      font-size: 1.2rem;
+    }
   }
   &__price {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
     &--sell {
       font-size: 1.75rem;
       position: relative;
@@ -33,7 +42,7 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        margin-left: 0.6em;
+        margin-left: 1em;
         font-size: 0.95rem;
         padding: 0.2em 0.4em;
         border-radius: 0.4rem;
@@ -49,39 +58,13 @@
     }
     @include media-breakpoint-up($xs) {
       flex-direction: column;
-      gap: 0.2rem;
+      gap: 0.5rem;
     }
     @include media-breakpoint-up($md) {
       align-items: flex-start;
     }
   }
-  &__amount {
-    background-color: var(--light-grayish-blue);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
 
-    img {
-      cursor: pointer;
-    }
-    &--input {
-      width: 100%;
-      font-weight: 700;
-      font-size: 1.025rem;
-      border: none;
-      outline: none;
-      text-align: center;
-      background-color: transparent;
-    }
-    &--plus,
-    &--minus {
-      @include mx(auto);
-    }
-    @include media-breakpoint-up($md) {
-      flex: 1;
-      @include px(1rem);
-    }
-  }
   &--foot {
     width: Min(100%, 400px);
     @include space-y(0.8rem);
@@ -92,6 +75,34 @@
       display: flex;
       gap: 1rem;
       @include space-y(0);
+    }
+
+    &__amount {
+      background-color: var(--light-grayish-blue);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center;
+
+      img {
+        cursor: pointer;
+      }
+      &--input {
+        width: 100%;
+        font-weight: 700;
+        font-size: 1.025rem;
+        border: none;
+        outline: none;
+        text-align: center;
+        background-color: transparent;
+      }
+      &--plus,
+      &--minus {
+        @include mx(auto);
+      }
+      @include media-breakpoint-up($md) {
+        flex: 1;
+        @include px(1rem);
+      }
     }
 
     & > * {
