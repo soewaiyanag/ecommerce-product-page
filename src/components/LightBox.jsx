@@ -1,12 +1,11 @@
 import React from "react";
 import "./LightBox.scss";
 import Slider from "./Slider";
-import close from "../images/icon-close.svg";
 
-const LightBox = () => {
+const LightBox = ({ viewWidth }) => {
   return (
     <div className="LightBox">
-      <Slider />
+      <Slider viewWidth={viewWidth} />
     </div>
   );
 };

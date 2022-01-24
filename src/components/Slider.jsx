@@ -13,21 +13,8 @@ import product4 from "../images/image-product-4.jpg";
 
 const productImgs = [product1, product2, product3, product4];
 
-const Slider = () => {
+const Slider = ({ viewWidth }) => {
   const [index, setIndex] = useState(0);
-  const [viewWidth, setViewWidth] = useState(0);
-
-  const updateViewWidth = () => {
-    setViewWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    updateViewWidth();
-    window.addEventListener("resize", updateViewWidth);
-    return () => {
-      window.removeEventListener("resize", updateViewWidth);
-    };
-  }, [viewWidth]);
 
   // FUNCTIONS
   const goPrevious = () => {
