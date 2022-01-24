@@ -7,6 +7,15 @@ import LightBox from "./components/LightBox";
 
 function App() {
   const [viewWidth, setViewWidth] = useState(0);
+  const [isLightBoxActive, setIsLightBoxActive] = useState(false);
+
+  const closeLightBox = () => {
+    setIsLightBoxActive(false);
+  };
+
+  const activeLightBox = () => {
+    setIsLightBoxActive(true);
+  };
 
   const updateViewWidth = () => {
     setViewWidth(window.innerWidth);
@@ -24,8 +33,10 @@ function App() {
     <div className="App">
       <Nav />
       <div className="App--container">
-        <Slider viewWidth={viewWidth} />
-        {viewWidth > 768 ? <LightBox viewWidth={viewWidth} /> : null}
+        <Slider viewWidth={viewWidth} activeLightBox={activeLightBox} />
+        {viewWidth > 768 && isLightBoxActive ? (
+          <LightBox viewWidth={viewWidth} closeLightBox={closeLightBox} />
+        ) : null}
         <Info />
       </div>
     </div>

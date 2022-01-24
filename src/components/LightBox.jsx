@@ -2,10 +2,10 @@ import React from "react";
 import "./LightBox.scss";
 import Slider from "./Slider";
 
-const LightBox = ({ viewWidth }) => {
+const LightBox = ({ viewWidth, closeLightBox }) => {
   return (
     <div className="LightBox">
-      <Slider viewWidth={viewWidth} />
+      <Slider viewWidth={viewWidth} closeLightBox={closeLightBox} />
     </div>
   );
 };

@@ -13,17 +13,16 @@ import product4 from "../images/image-product-4.jpg";
 
 const productImgs = [product1, product2, product3, product4];
 
-const Slider = ({ viewWidth }) => {
+const Slider = ({ viewWidth, activeLightBox, closeLightBox }) => {
   const [index, setIndex] = useState(0);
 
   // FUNCTIONS
   const goPrevious = () => {
-    setIndex(index - 1 === -1 ? 3 : index - 1);
+    setIndex(index - 1 === -1 ? productImgs.length - 1 : index - 1);
   };
   const goNext = () => {
     setIndex((index + 1) % productImgs.length);
   };
-  const closeLightBox = () => {};
 
   return (
     <div className="Slider">
@@ -34,7 +33,7 @@ const Slider = ({ viewWidth }) => {
         <img src={next} alt="next" />
       </span>
 
-      <img className="close" src={close} alt="close" />
+      <img className="close" src={close} alt="close" onClick={closeLightBox} />
 
       <div className="Slider__preview--wrapper">
         <div className="Slider__preview">
@@ -43,6 +42,10 @@ const Slider = ({ viewWidth }) => {
               transform: `translateX(${-100 * index}%)`,
             }}
             className="Slider__preview--imgs"
+            onClick={() => {
+              // optional event // don't run when function is undefined
+              activeLightBox && activeLightBox();
+            }}
           >
             {productImgs.map((img, index) => {
               return (
