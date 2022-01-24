@@ -4,6 +4,12 @@
   &__preview {
     position: relative;
     overflow-x: hidden;
+    &--wrapper {
+      @include media-breakpoint-up($md) {
+        border-radius: 1rem;
+        overflow: hidden;
+      }
+    }
     &--imgs {
       display: grid;
       grid-template-columns: repeat(4, 100%);
@@ -12,6 +18,9 @@
     &--img {
       width: 100%;
       object-fit: cover;
+      @include media-breakpoint-up($md) {
+        cursor: pointer;
+      }
     }
     &--icon {
       position: absolute;
@@ -26,6 +35,9 @@
       user-select: none;
       opacity: 1;
       transition: opacity 140ms;
+      @include media-breakpoint-up($md) {
+        display: none;
+      }
       img {
         width: 0.5rem;
         position: absolute;
@@ -49,7 +61,8 @@
   }
 }
 
-@include media-breakpoint-up($md) {
-  .Slider {
+.LightBox {
+  .Slider__preview--icon {
+    display: inline-block;
   }
 }
