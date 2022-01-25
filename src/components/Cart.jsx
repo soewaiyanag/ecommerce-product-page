@@ -20,7 +20,14 @@ const Item = () => {
           ${(price * numOfItem).toFixed(2)}
         </span>
       </span>
-      <img className="Item__del" src={del_icon} alt="delete icon" />
+      <img
+        className="Item__del"
+        src={del_icon}
+        alt="delete icon"
+        onClick={() => {
+          setNumOfItem(0);
+        }}
+      />
     </div>
   );
 };

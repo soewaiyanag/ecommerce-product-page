@@ -62,6 +62,7 @@ const Main = () => {
           onClick={() => {
             setNumOfItem(amount);
           }}
+          disabled={amount <= 0}
         >
           <img src={cart} alt="cart icon" />
           Add to cart
