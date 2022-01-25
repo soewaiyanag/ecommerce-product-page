@@ -8,7 +8,6 @@ $h-nav: 5rem;
   align-items: center;
   background-color: white;
   border-bottom: 1px solid var(--grayish-blue);
-  max-width: $xl;
   z-index: 10;
   @include mx(auto);
   @include px(2rem);
@@ -32,6 +31,7 @@ $h-nav: 5rem;
     position: relative;
     z-index: 10;
     display: flex;
+    cursor: pointer;
     img {
       width: 1.5rem;
     }
@@ -50,6 +50,12 @@ $h-nav: 5rem;
   }
   &__avatar {
     width: 1.8rem;
+    border-radius: 50%;
+    outline: 0px solid var(--primary);
+    transition: outline 100ms;
+    &:hover {
+      outline-width: 2px;
+    }
   }
 
   &__link {
@@ -114,8 +120,8 @@ $h-nav: 5rem;
     &__link {
       height: fit-content;
       font-weight: bold;
-      font-size: 1.2rem;
       color: var(--dark-blue);
+      padding-left: 1rem;
       &:hover {
         color: var(--dark-grayish-blue);
       }

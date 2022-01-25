@@ -16,7 +16,7 @@ const Nav = () => {
   const navLinksRef = useRef(null);
   const [isNavActive, setIsNavActive] = useState(false);
   const [showCart, setShowCart] = useState(false);
-  const [numOfItems, setNumOfItems] = useState(0);
+  const [numOfItems, setNumOfItems] = useState(1);
 
   useEffect(() => {
     navLinks.forEach((navLink, index) => {

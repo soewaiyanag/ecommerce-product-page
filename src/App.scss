@@ -3,6 +3,8 @@
   position: relative;
   overflow-x: hidden;
   height: 100vh;
+  max-width: $xl;
+  @include mx(auto);
   &--container {
     @include media-breakpoint-up($md) {
       max-width: 1024px;
