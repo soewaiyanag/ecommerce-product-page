@@ -20,6 +20,13 @@
       object-fit: cover;
       @include media-breakpoint-up($md) {
         cursor: pointer;
+        transition: filter 200ms;
+        &:hover {
+          filter: brightness(0.95);
+        }
+        &:active {
+          filter: brightness(1);
+        }
       }
     }
     &--icon {

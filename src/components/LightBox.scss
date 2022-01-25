@@ -15,6 +15,9 @@
     &__preview {
       &--img {
         cursor: default;
+        &:hover {
+          filter: none;
+        }
       }
     }
 

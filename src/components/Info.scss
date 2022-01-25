@@ -122,8 +122,12 @@
       color: #fff;
       font-weight: 700;
       font-size: 1.025rem;
+      transition: filter 200ms;
+      &:hover {
+        filter: brightness(0.95);
+      }
       &:active {
-        opacity: 0.8;
+        filter: brightness(1);
       }
       img {
         filter: brightness(0) invert(1);
