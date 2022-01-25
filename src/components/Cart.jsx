@@ -36,7 +36,9 @@ const ItemCart = () => {
   return (
     <div className="ItemCart">
       <Item />
-      <button className="ItemCart--checkoutBtn">Checkout</button>
+      <a href="https://youtu.be/dQw4w9WgXcQ" className="ItemCart--checkoutBtn">
+        Checkout
+      </a>
     </div>
   );
 };

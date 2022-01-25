@@ -84,6 +84,7 @@
   gap: 2rem;
 
   &--checkoutBtn {
+    text-align: center;
     margin-top: auto;
     outline: none;
     border: none;
@@ -94,5 +95,13 @@
     font-size: 1.025rem;
     cursor: pointer;
     @include py(0.8rem);
+    transition: filter 200ms;
+
+    &:hover {
+      filter: brightness(0.95);
+    }
+    &:active {
+      filter: brightness(1);
+    }
   }
 }
