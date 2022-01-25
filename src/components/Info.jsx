@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Info.scss";
 import cart from "../images/icon-cart.svg";
 import plus from "../images/icon-plus.svg";
 import minus from "../images/icon-minus.svg";
+import { CartContext } from "../CartContext";
 
 const Main = () => {
-  const [amount, setAmount] = useState(0);
+  const { amount, setAmount } = useContext(CartContext);
   return (
     <div className="Main">
       <h4 className="Main__company">SNEAKER COMPANY</h4>

@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useContext } from "react";
 import "./Nav.scss";
 import menu from "../images/icon-menu.svg";
 import close from "../images/icon-close.svg";
@@ -8,6 +8,7 @@ import logo from "../images/logo.svg";
 import { Link, useLocation } from "react-router-dom";
 import capitalize from "lodash.capitalize";
 import Cart from "./Cart";
+import { CartContext } from "../CartContext";
 
 const navLinks = ["collections", "men", "women", "about", "contact"];
 
@@ -16,7 +17,7 @@ const Nav = () => {
   const navLinksRef = useRef(null);
   const [isNavActive, setIsNavActive] = useState(false);
   const [showCart, setShowCart] = useState(false);
-  const [numOfItems, setNumOfItems] = useState(1);
+  const { amount, setAmount } = useContext(CartContext);
 
   useEffect(() => {
     navLinks.forEach((navLink, index) => {
@@ -63,7 +64,7 @@ const Nav = () => {
         }}
       >
         <img src={cart} alt="cart" />
-        {numOfItems ? <span className="num-of-items">{numOfItems}</span> : null}
+        {amount ? <span className="num-of-items">{amount}</span> : null}
       </div>
       <img className="Nav__avatar" src={avatar} alt="avatar" />
       {showCart ? <Cart /> : null}
