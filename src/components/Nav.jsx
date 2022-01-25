@@ -17,7 +17,7 @@ const Nav = () => {
   const navLinksRef = useRef(null);
   const [isNavActive, setIsNavActive] = useState(false);
   const [showCart, setShowCart] = useState(false);
-  const { amount, setAmount } = useContext(CartContext);
+  const { numOfItem, setNumOfItem } = useContext(CartContext);
 
   useEffect(() => {
     navLinks.forEach((navLink, index) => {
@@ -64,7 +64,7 @@ const Nav = () => {
         }}
       >
         <img src={cart} alt="cart" />
-        {amount ? <span className="num-of-items">{amount}</span> : null}
+        {numOfItem ? <span className="num-of-items">{numOfItem}</span> : null}
       </div>
       <img className="Nav__avatar" src={avatar} alt="avatar" />
       {showCart ? <Cart /> : null}

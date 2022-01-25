@@ -6,7 +6,8 @@ import minus from "../images/icon-minus.svg";
 import { CartContext } from "../CartContext";
 
 const Main = () => {
-  const { amount, setAmount } = useContext(CartContext);
+  const [amount, setAmount] = useState(0);
+  const { numOfItem, setNumOfItem } = useContext(CartContext);
   return (
     <div className="Main">
       <h4 className="Main__company">SNEAKER COMPANY</h4>
@@ -57,7 +58,11 @@ const Main = () => {
             className="Main--foot__amount--plus"
           />
         </div>
-        <button>
+        <button
+          onClick={() => {
+            setNumOfItem(amount);
+          }}
+        >
           <img src={cart} alt="cart icon" />
           Add to cart
         </button>
