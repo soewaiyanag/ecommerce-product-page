@@ -36,9 +36,6 @@ const Main = () => {
           <input
             className="Main--foot__amount--input"
             placeholder={0}
-            min={0}
-            max={999}
-            maxLength={4}
             value={amount}
             onChange={(e) => {
               let value = e.target.value;

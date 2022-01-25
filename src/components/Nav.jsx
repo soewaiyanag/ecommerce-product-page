@@ -17,30 +17,30 @@ const Nav = () => {
   const navLinksRef = useRef(null);
   const [isNavActive, setIsNavActive] = useState(false);
   const [showCart, setShowCart] = useState(false);
-  const { numOfItem, setNumOfItem } = useContext(CartContext);
+  const { numOfItem } = useContext(CartContext);
 
   useEffect(() => {
     navLinks.forEach((navLink, index) => {
       if (path === `/${navLink}`) {
-        navLinksRef.current.childNodes[index].classList.add("current");
+        navLinksRef.current.childNodes[index + 1].classList.add("current");
       } else {
-        navLinksRef.current.childNodes[index].classList.remove("current");
+        navLinksRef.current.childNodes[index + 1].classList.remove("current");
       }
+      // [index + 1] because close btn is included and it's not navLink
     });
   });
 
-  const toggleNav = () => {
-    setIsNavActive(!isNavActive);
+  const activeNav = () => {
+    setIsNavActive(true);
+  };
+
+  const closeNav = () => {
+    setIsNavActive(false);
   };
 
   return (
     <nav className="Nav">
-      <img
-        onClick={toggleNav}
-        className="Nav__menu"
-        src={isNavActive ? close : menu}
-        alt="menu"
-      />
+      <img onClick={activeNav} className="Nav__menu" src={menu} alt="menu" />
       <Link to="/">
         <img className="Nav__logo" src={logo} alt="logo" />
       </Link>
@@ -51,6 +51,12 @@ const Nav = () => {
         className="Nav__links"
         ref={navLinksRef}
       >
+        <img
+          className="Nav__links--close"
+          src={close}
+          alt="close"
+          onClick={closeNav}
+        />
         {navLinks.map((navLink) => (
           <Link className="Nav__link" to={"/" + navLink} key={navLink}>
             {capitalize(navLink)}
