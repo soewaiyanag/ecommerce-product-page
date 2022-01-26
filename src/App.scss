@@ -5,9 +5,9 @@
   max-width: $xl;
   @include mx(auto);
   &--container {
-    @include py(2rem);
     @include media-breakpoint-up($md) {
       @include mx(auto);
+      @include py(3rem);
       @include px(1rem);
       display: grid;
       grid-template-columns: minmax(0, 1fr) 52%;
