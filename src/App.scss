@@ -1,22 +1,20 @@
 @import "./mixin.scss";
 .App {
   position: relative;
-  overflow-x: hidden;
   height: 100vh;
   max-width: $xl;
   @include mx(auto);
   &--container {
+    @include py(2rem);
     @include media-breakpoint-up($md) {
-      max-width: 1024px;
       @include mx(auto);
-      @include my(2rem);
       @include px(1rem);
       display: grid;
       grid-template-columns: minmax(0, 1fr) 52%;
       gap: 2rem;
     }
     @include media-breakpoint-up($lg) {
-      @include my(4rem);
+      @include py(4rem);
       gap: 5rem;
     }
   }
