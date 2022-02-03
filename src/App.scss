@@ -5,6 +5,7 @@
   max-width: $xl;
   @include mx(auto);
   &--container {
+    padding-bottom: 2rem;
     @include media-breakpoint-up($md) {
       @include mx(auto);
       @include py(3rem);
