@@ -3,11 +3,11 @@ import "./Info.scss";
 import cart from "../images/icon-cart.svg";
 import plus from "../images/icon-plus.svg";
 import minus from "../images/icon-minus.svg";
-import { CartContext } from "../CartContext";
+import store from "../store";
+import { addToCart } from "../actions";
 
 const Main = () => {
   const [amount, setAmount] = useState(0);
-  const { numOfItem, setNumOfItem } = useContext(CartContext);
   return (
     <div className="Main">
       <h4 className="Main__company">SNEAKER COMPANY</h4>
@@ -57,7 +57,7 @@ const Main = () => {
         </div>
         <button
           onClick={() => {
-            setNumOfItem(amount);
+            store.dispatch(addToCart(amount));
           }}
           disabled={amount <= 0}
         >

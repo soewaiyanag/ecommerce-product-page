@@ -4,7 +4,6 @@ import Nav from "./components/Nav";
 import Slider from "./components/Slider";
 import Info from "./components/Info";
 import LightBox from "./components/LightBox";
-import CartContextProvider from "./CartContext";
 
 function App() {
   const [viewWidth, setViewWidth] = useState(0);
@@ -31,18 +30,16 @@ function App() {
   }, [viewWidth]);
 
   return (
-    <CartContextProvider>
-      <div className="App">
-        <Nav />
-        <div className="App--container">
-          <Slider viewWidth={viewWidth} activeLightBox={activeLightBox} />
-          {viewWidth > 768 && isLightBoxActive ? (
-            <LightBox viewWidth={viewWidth} closeLightBox={closeLightBox} />
-          ) : null}
-          <Info />
-        </div>
+    <div className="App">
+      <Nav />
+      <div className="App--container">
+        <Slider viewWidth={viewWidth} activeLightBox={activeLightBox} />
+        {viewWidth > 768 && isLightBoxActive ? (
+          <LightBox viewWidth={viewWidth} closeLightBox={closeLightBox} />
+        ) : null}
+        <Info />
       </div>
-    </CartContextProvider>
+    </div>
   );
 }
 

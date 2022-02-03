@@ -1,14 +1,14 @@
-import { useRef, useEffect, useState, useContext } from "react";
+import { useRef, useState, useContext } from "react";
 import "./Nav.scss";
 import menu from "../images/icon-menu.svg";
 import close from "../images/icon-close.svg";
 import cart from "../images/icon-cart.svg";
 import avatar from "../images/image-avatar.png";
 import logo from "../images/logo.svg";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import capitalize from "lodash.capitalize";
 import Cart from "./Cart";
-import { CartContext } from "../CartContext";
+import store from "../store";
 
 const navLinks = ["collections", "men", "women", "about", "contact"];
 
@@ -16,7 +16,7 @@ const Nav = () => {
   const navLinksRef = useRef(null);
   const [isNavActive, setIsNavActive] = useState(false);
   const [showCart, setShowCart] = useState(false);
-  const { numOfItem } = useContext(CartContext);
+  const { numOfItem } = store.getState();
 
   const activeNav = () => {
     setIsNavActive(true);
