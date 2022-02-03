@@ -5,8 +5,9 @@ export const addToCart = (amount) => {
   };
 };
 
-export const removeFromCart = () => {
+export const removeFromCart = (id) => {
   return {
     type: "REMOVE_FROM_CART",
+    id,
   };
 };

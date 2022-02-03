@@ -1,5 +1,7 @@
 @import "../mixin.scss";
 
+$cart-height: 7.5rem;
+
 .Cart {
   position: absolute;
   z-index: 5;
@@ -27,7 +29,7 @@
     @include py(1.8rem);
   }
   &__empty {
-    height: 7.5rem;
+    height: $cart-height;
     display: grid;
     place-items: center;
     color: var(--dark-grayish-blue);
@@ -76,12 +78,19 @@
   &__del {
     grid-area: del;
     justify-self: flex-end;
+    padding-right: 1rem;
   }
 }
 
 .ItemCart {
   display: grid;
   gap: 2rem;
+  &__container {
+    overflow-x: auto;
+    max-height: calc($cart-height * 2);
+    display: grid;
+    gap: 2rem;
+  }
 
   &--checkoutBtn {
     text-align: center;

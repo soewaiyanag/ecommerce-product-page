@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import store from "./store";
 
 const render = () => {
+  console.log(store.getState());
   return ReactDOM.render(
     <BrowserRouter basename="/ecommerce-product-page">
       <App />

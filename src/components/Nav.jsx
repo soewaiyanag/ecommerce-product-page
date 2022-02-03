@@ -16,7 +16,7 @@ const Nav = () => {
   const navLinksRef = useRef(null);
   const [isNavActive, setIsNavActive] = useState(false);
   const [showCart, setShowCart] = useState(false);
-  const { numOfItem } = store.getState();
+  const { items } = store.getState();
 
   const activeNav = () => {
     setIsNavActive(true);
@@ -64,7 +64,9 @@ const Nav = () => {
         }}
       >
         <img src={cart} alt="cart" />
-        {numOfItem ? <span className="num-of-items">{numOfItem}</span> : null}
+        {!!items.length ? (
+          <span className="num-of-items">{items.length}</span>
+        ) : null}
       </div>
       <img className="Nav__avatar" src={avatar} alt="avatar" />
       {showCart ? <Cart /> : null}
