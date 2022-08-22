@@ -19,7 +19,7 @@ const Selector = ({ index, setIndex }) => {
       {productTumbs.map((img, i) => (
         <div
           style={{
-            outlineWidth: index === i ? "initial" : null,
+            outlineWidth: index === i ? "2px" : null,
           }}
           className="Selector--div"
           key={"selector" + i}
