@@ -1,17 +1,38 @@
-# ecommerce-product-page
+# Ecommerce Product Page
 
-## About this project
+## About
 
-This is the challenge from [frontendmentor.io](frontendmentor.io). 
+This project is a challenge sourced from [Frontend Mentor](https://frontendmentor.io).
 
-## What I learned from this challenge
+## What I Learned from This Challenge
 
-- How to make a lightbox
-- How to make a slider
-- How to manage states with Context API
-- How to work with React Router
-- More familiar with React && Sass/Scss
+- Implementation of a lightbox
+- Creation of a slider
+- State management using Context API
+- Integration with React Router
+- Enhanced familiarity with React and Sass/Scss
 
-## preview link
+## Preview Link
 
-[link to preview website](https://soewaiyanag.github.io/ecommerce-product-page/)
+[Ecommerce Product Page Preview](https://soewaiyanag.github.io/ecommerce-product-page/)
+
+### Prerequisites
+
+- Node.js
+- npm
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/soewaiyanag/ecommerce-product-page.git
+
+# Change into the project directory
+cd ecommerce-product-page
+
+# Install dependencies
+npm install
+
+# Preview in browser
+npm run dev
+```
